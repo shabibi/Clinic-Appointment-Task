@@ -23,7 +23,7 @@ namespace ClinicAppointmentTask.Controllers
             {
                 // Call the service to fetch appointments for the specified patient.
                 var appointments = _appointmentService.GetAppointmentsByPatient(pid);
-                if (appointments == null)// Check if no appointments were found
+                if (appointments.Count() == 0)// Check if no appointments were found
                 {
                     return NotFound("No Appointment found.");
                 }
