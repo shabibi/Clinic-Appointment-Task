@@ -17,10 +17,12 @@ namespace ClinicAppointmentTask
 
             builder.Services.AddScoped<IPatientRepo, PatientRepo>();
             builder.Services.AddScoped<IClinicRepo, ClinicRepo>();
+            builder.Services.AddScoped<IAppointmentRepo, AppointmentRepo>();
 
             builder.Services.AddScoped<IPatientService, PatientService>();
             builder.Services.AddScoped<IClinicService, ClinicService>();
-           
+            builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
