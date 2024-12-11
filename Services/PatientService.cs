@@ -13,6 +13,11 @@ namespace ClinicAppointmentTask.Services
 
         public void AddPatient(Patient patient)
         {
+           //check age data to not accept less than 0
+            if(patient.age < 0)
+            {
+                throw new InvalidOperationException("Invalid age data.");
+            }
             // Add the patient to the repository
             _patientRepo.AddPatient(patient);
         }
