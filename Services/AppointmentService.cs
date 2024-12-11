@@ -81,6 +81,10 @@ namespace ClinicAppointmentTask.Services
                 date = appDate
             };
 
+            //check date to not be in the past
+            if(newAppointment.date < DateTime.Now)
+                throw new InvalidOperationException("Appointment date cannot be in the past.");
+
             // Add the new appointment to the database using the repository.
             _appointmentRepo.BookAppointment(newAppointment);
         }
