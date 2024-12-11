@@ -16,8 +16,11 @@ namespace ClinicAppointmentTask
                   options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddScoped<IPatientRepo, PatientRepo>();
-            builder.Services.AddScoped<IPatientService, PatientService>();
+            builder.Services.AddScoped<IClinicRepo, ClinicRepo>();
 
+            builder.Services.AddScoped<IPatientService, PatientService>();
+            builder.Services.AddScoped<IClinicService, ClinicService>();
+           
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
