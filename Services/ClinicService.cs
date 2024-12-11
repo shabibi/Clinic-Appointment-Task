@@ -15,7 +15,7 @@ namespace ClinicAppointmentTask.Services
         // Adds a new clinic to the repository.
         public void AddClinic(Clinic clinic)
         {
-            if(clinic.NumberOfSlots < 0)
+            if(clinic.NumberOfSlots < 0 || clinic.NumberOfSlots > 20)
             {
                 throw new InvalidOperationException("The field NumberOfSlots must be between 1 and 20.");
             }
