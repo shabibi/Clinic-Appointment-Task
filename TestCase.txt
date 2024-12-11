@@ -1,0 +1,98 @@
+Patient:
+* AddPatient
+	1- Test to pass Case
+	patientName = "John Doe"
+	age = 30
+	gender = 0
+
+	2- Test for Missing Patient Name
+	patientName = null;
+        age = 30;
+       gender = 0;
+
+	3- Test Invalid Age
+	patientName: "Jane Doe",
+ 	 "age": -5,
+ 	 "gender": 1
+
+	4-Test duplicate name
+	patientName = "John Doe"
+	age = 20
+	gender = 0
+
+	5- Test litter in age 
+	patientName = "Ali"
+	age = h
+	gender = 0
+
+* AddClinic
+	1- Test to pass Case
+	"specilization": "Pediatrics",
+  	"numberOfSlots": 10
+
+	2-  Tests the case where the specialization is missing 
+	"specilization": null,
+  	"numberOfSlots": 10
+	
+	3- Invalid Number of Slots (Less Than 1)
+	 "specilization": "Cardiology",
+  	"numberOfSlots": -1
+	
+	4-Valid Specialization with Maximum Number of Slots
+	"specilization": "Cardiology",
+  	"numberOfSlots": 21
+	
+	5-Test duplicate clinic name
+	"specilization": "Pediatrics",
+  	"numberOfSlots": 3
+	
+	6-  Tests the case where the numberOfSlots is missing 
+	"specilization": Pediatrics,
+  	"numberOfSlots": null
+
+* BookAppointment
+	1- Test to pass Case
+	"patientName": "John Doe",
+  	"ClinicName": "Pediatrics",
+ 	 "Date": "2024-12-13"
+	
+	2- Missing Patient Name
+	"patientName": null,
+  	"ClinicName": "Pediatrics",
+ 	 "Date": "2024-12-13"
+	
+	3-Missing Clinic Name
+	"patientName": "John Doe",
+  	"ClinicName": null,
+ 	 "Date": "2024-12-13"
+
+	4- Invalid Date in the Past
+	"patientName": "John Doe",
+  	"ClinicName": "Pediatrics",
+ 	 "Date": "2024-12-10"
+
+	5-  Missing Date
+	"patientName": "John Doe",
+  	"ClinicName": "Pediatrics",
+ 	 "Date": null
+
+* GetAppointmentsByPatient
+	1- Test to pass Case
+	 "pid": 1
+	
+	2-Nonexistent Patient ID
+	"pid": 9999
+
+	3-Empty Patient ID
+	"pid": NULL
+
+
+* GetAppointmentsByClinc
+	1- Test to pass Case
+	 "cid": 7
+	
+	2-Nonexistent clinic ID
+	"cid": 9999
+
+	3-Empty clinic ID
+	"pid": NULL
