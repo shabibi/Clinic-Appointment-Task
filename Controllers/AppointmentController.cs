@@ -27,6 +27,7 @@ namespace ClinicAppointmentTask.Controllers
                 {
                     return NotFound("No Appointment found.");
                 }
+
                 // Return the appointments in the response.
                 return Ok(appointments);
             }
@@ -46,7 +47,7 @@ namespace ClinicAppointmentTask.Controllers
                 // Call the service to fetch appointments for the specified clinic.
                 var appointments = _appointmentService.GetAppointmentsByClinc(cid);
 
-                if (appointments == null)// Check if no appointments were found
+                if (appointments.Count() <= 0)// Check if no appointments were found
                 {
                     return NotFound("No Appointment found.");
                 }
